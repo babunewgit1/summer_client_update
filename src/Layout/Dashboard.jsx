@@ -2,17 +2,16 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
+import useStudent from "../hooks/useStudent";
 
 const Dashboard = () => {
-  // TODO: check user admin or not form server
-  // const isInstructor = false;
-  const isStaudent = false;
-
   const [isAdmin] = useAdmin();
 
   const [isInstructor] = useInstructor();
 
-  console.log(isInstructor);
+  const [isStaudent] = useStudent();
+
+  console.log(isStaudent, "hello student");
 
   return (
     <section id="dashboard">
@@ -40,8 +39,15 @@ const Dashboard = () => {
           )}
           {isStaudent && (
             <ul>
-              <li>My Selected Classes</li>
-              <li>My Enrolled Classes</li>
+              <li>
+                <Link to="/dashboard/selectedclass">My Selected Classes</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/enrolledclass">My Enrolled Classes</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/paymenthistory">My Payment History</Link>
+              </li>
             </ul>
           )}
         </div>

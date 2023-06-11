@@ -15,7 +15,6 @@ const ManageClass = () => {
   const handelApprove = (id) => {
     const updateApp = { status: "approve" };
     axiosSecure.patch(`/class/${id}`, updateApp).then((data) => {
-      console.log(data.data);
       if (data.data.modifiedCount > 0) {
         refetch();
         toast.success("course approved");
@@ -26,7 +25,6 @@ const ManageClass = () => {
   const handelDeny = (id) => {
     const updateApp = { status: "deny" };
     axiosSecure.patch(`/class/${id}`, updateApp).then((data) => {
-      console.log(data.data);
       if (data.data.modifiedCount > 0) {
         refetch();
         toast.success("course deny");

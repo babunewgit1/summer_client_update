@@ -1,10 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+import moon from "../../../assets/moon.png";
+import sun from "../../../assets/sun.png";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState("light");
   const [bar, setBar] = useState(true);
   const { customLogOut } = useContext(AuthContext);
   const { currentuser } = useContext(AuthContext);
@@ -20,8 +23,25 @@ const Navbar = () => {
       });
   };
 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  console.log(theme);
+
   return (
-    <section id="navbar" className=" bg-[#1e272e] py-4 lg:px-10 px-4">
+    <section
+      id="navbar"
+      className=" dark:bg-white navBG bg-[#1e272e] py-4 lg:px-10 px-4"
+    >
       <div className="fulid">
         <div className="navbarWrapper lg:flex items-center justify-between">
           <div className="logo flex items-center justify-between">
@@ -87,6 +107,23 @@ const Navbar = () => {
                   <button onClick={handelLogout}>LOGOUT</button>
                 </li>
               )}
+              <li>
+                <button onClick={handleThemeSwitch}>
+                  {theme === "light" ? (
+                    <img
+                      className="w-[26px]"
+                      src={moon}
+                      alt="images not found"
+                    />
+                  ) : (
+                    <img
+                      className="w-[26px]"
+                      src={sun}
+                      alt="images not found"
+                    />
+                  )}
+                </button>
+              </li>
             </ul>
           </div>
         </div>

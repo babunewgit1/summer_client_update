@@ -3,6 +3,7 @@ import google from "../../../assets/google.png";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
+import { updateProfile } from "firebase/auth";
 
 const Googlelogin = () => {
   const { googleLogin } = useContext(AuthContext);
@@ -14,11 +15,16 @@ const Googlelogin = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
+        updateProfile(user, {
+          displayName: user?.name,
+          photoURL: user?.photo,
+        });
         if (user) {
           toast.success("Google login Successfull");
           const saveUser = {
             name: user.displayName,
             email: user.email,
+            photo: user.photoURL,
             role: "student",
           };
 

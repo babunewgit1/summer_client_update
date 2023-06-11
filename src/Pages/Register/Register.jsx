@@ -55,6 +55,7 @@ const Register = () => {
           const saveUser = {
             name: data.name,
             email: data.email,
+            photo: data.photo,
             role: "student",
           };
 

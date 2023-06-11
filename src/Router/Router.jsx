@@ -14,6 +14,11 @@ import ManageClass from "../Pages/Dashboard/ManageClass";
 import MyClass from "../Pages/Dashboard/MyClass";
 import ClassPage from "../Pages/ClassPage/ClassPage";
 import InstructorsPage from "../Pages/InstructorsPage/InstructorsPage";
+import MySelectedClass from "../Pages/Dashboard/MySelectedClass";
+import Payment from "../Pages/Dashboard/Payment";
+import EnrolledClass from "../Pages/Dashboard/EnrolledClass";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
+import StudentRoute from "./StudentRoute";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +86,39 @@ const router = createBrowserRouter([
           <InstructorRoute>
             <MyClass></MyClass>
           </InstructorRoute>
+        ),
+      },
+
+      {
+        path: "selectedclass",
+        element: (
+          <StudentRoute>
+            <MySelectedClass></MySelectedClass>
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "payment/:id",
+        element: (
+          <StudentRoute>
+            <Payment></Payment>
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "enrolledclass",
+        element: (
+          <StudentRoute>
+            <EnrolledClass></EnrolledClass>
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "paymenthistory",
+        element: (
+          <StudentRoute>
+            <PaymentHistory></PaymentHistory>
+          </StudentRoute>
         ),
       },
     ],

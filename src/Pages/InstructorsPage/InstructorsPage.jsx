@@ -23,24 +23,13 @@ const InstructorsPage = () => {
               <div key={items._id} className="classBox">
                 <div className="classImg">
                   <img
-                    className="w-full h-[300px] mb-5"
-                    src={items.image}
+                    className="w-full h-[300px] mb-5 object-cover object-top"
+                    src={items?.photo}
                     alt=""
                   />
                 </div>
                 <h3 className="text-3xl font-medium">{items.name}</h3>
-                <div className="classDetails">
-                  <p className="flex items-center justify-between space-y-3">
-                    Instructor name <span>{items.instructor_name}</span>
-                  </p>
-                  <p className="flex items-center justify-between space-y-3">
-                    Available seats <span>{items.available_seats}</span>
-                  </p>
-                  <p className="flex items-center justify-between space-y-3">
-                    Price <span>{items.price}</span>
-                  </p>
-                  <button className="btn btn-success">Select class</button>
-                </div>
+                <p>{items?.email}</p>
               </div>
             );
           })}

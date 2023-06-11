@@ -79,7 +79,7 @@ const AddClass = () => {
                   required
                   className="block w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
                   type="text"
-                  defaultValue={currentuser?.displayName}
+                  value={currentuser?.displayName}
                   readOnly
                 />
               </div>
@@ -93,7 +93,7 @@ const AddClass = () => {
                   {...register("instructor_email")}
                   className="block w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
                   type="text"
-                  defaultValue={currentuser?.email}
+                  value={currentuser?.email}
                 />
               </div>
               <div className="loginInput mb-5">
