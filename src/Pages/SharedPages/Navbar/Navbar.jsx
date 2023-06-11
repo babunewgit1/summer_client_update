@@ -5,13 +5,13 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
 import moon from "../../../assets/moon.png";
 import sun from "../../../assets/sun.png";
+import logo from "../../../assets/logo.png";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
   const [bar, setBar] = useState(true);
   const { customLogOut } = useContext(AuthContext);
   const { currentuser } = useContext(AuthContext);
-  console.log(currentuser);
 
   const handelLogout = () => {
     return customLogOut()
@@ -35,18 +35,16 @@ const Navbar = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  console.log(theme);
-
   return (
     <section
       id="navbar"
-      className=" dark:bg-white navBG bg-[#1e272e] py-4 lg:px-10 px-4"
+      className=" dark:bg-blacks bg-greens py-4 lg:px-10 px-4"
     >
       <div className="fulid">
         <div className="navbarWrapper lg:flex items-center justify-between">
           <div className="logo flex items-center justify-between">
             <Link to="/">
-              <h2 className="text-4xl font-bold text-white">SportFusion</h2>
+              <img src={logo} className="w-[180px]" alt="" />
             </Link>
             <div className="bar lg:hidden text-white">
               <div className="barsub">

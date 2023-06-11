@@ -85,3 +85,11 @@ span.deny {
 .playbutton:hover {
   background-color: transparent;
 }
+
+.bg-greens {
+  background-color: #302787;
+}
+
+.bg-blacks {
+  background-color: #20252d;
+}
