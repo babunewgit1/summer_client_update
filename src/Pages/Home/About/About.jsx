@@ -38,7 +38,7 @@ const About = () => {
             </div>
           </Roll>
           <JackInTheBox>
-            <div className="wrapperRight">
+            {/* <div className="wrapperRight">
               <h2 className="text-4xl font-medium mb-4">About Us</h2>
               <p>
                 Welcome to SportFusion, where we combine the excitement of games
@@ -50,7 +50,7 @@ const About = () => {
                 fun and learning like never before.
               </p>
             </div>
-          </JackInTheBox>
+          </JackInTheBox> */}
         </div>
       </div>
     </section>
