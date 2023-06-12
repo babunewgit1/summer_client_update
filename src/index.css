@@ -122,7 +122,7 @@ span.deny {
   color: #ff3b4a !important;
 }
 
-.dashboardlink li a,
+/* .dashboardlink li a,
 .dashboardlink li a:hover {
   display: flex !important;
   align-items: center !important;
@@ -130,7 +130,7 @@ span.deny {
   padding: 10px 15px !important;
   background-color: #20252d !important;
   margin-bottom: 6px !important;
-}
+} */
 
 table th {
   font-size: 16px;
