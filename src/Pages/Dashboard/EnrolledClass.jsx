@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const EnrolledClass = () => {
+  useTitle("sF | Enrolled Class");
   const { currentuser } = useContext(AuthContext);
   const [axiosSecure] = useAxiosSecure();
   const { data: enrolledClass = [] } = useQuery(["payments"], async () => {
@@ -11,10 +13,9 @@ const EnrolledClass = () => {
     return res.data;
   });
 
-  console.log(enrolledClass);
   return (
-    <section id="enrolled">
-      <table className="table table-zebra">
+    <div id="enrolled" className="overflow-x-auto">
+      <table className="table table-zebra ">
         <thead>
           <tr>
             <th>Sl.NO</th>
@@ -50,7 +51,7 @@ const EnrolledClass = () => {
           })}
         </tbody>
       </table>
-    </section>
+    </div>
   );
 };
 

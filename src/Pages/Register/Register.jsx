@@ -6,8 +6,10 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
+  useTitle("sF | Register");
   const [showpass, setShowpass] = useState(true);
   const [showpasscon, setShowpasscon] = useState(true);
   const { customRegister } = useContext(AuthContext);
@@ -77,10 +79,10 @@ const Register = () => {
   };
 
   return (
-    <section id="login">
+    <section id="login" className="dark:bg-[#20252d]">
       <div className="mycontainer">
         <div className="loginWrapper min-h-screen w-full flex items-center justify-center">
-          <div className="loginBox w-[600px] bg-white shadowCustom">
+          <div className="loginBox w-[600px] dark:bg-[#20252d] dark:text-white bg-white shadowCustom">
             <div className="logiHeading">
               <h2 className="text-4xl font-semibold text-center mb-5">
                 Register

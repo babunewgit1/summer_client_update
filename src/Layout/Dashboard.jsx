@@ -1,61 +1,110 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useStudent from "../hooks/useStudent";
+import logo from "../assets/logo.png";
+import {
+  FaListUl,
+  FaBookMedical,
+  FaFileInvoiceDollar,
+  FaBars,
+  FaBookOpen,
+  FaTools,
+  FaUserAlt,
+} from "react-icons/fa";
+import useTitle from "../hooks/useTitle";
 
 const Dashboard = () => {
+  useTitle("sF | Dashboard");
   const [isAdmin] = useAdmin();
 
   const [isInstructor] = useInstructor();
 
   const [isStaudent] = useStudent();
 
-  console.log(isStaudent, "hello student");
-
   return (
-    <section id="dashboard">
-      <div className="wrapper grid grid-cols-12">
-        <div className="dashboardLeft col-span-2 h-screen bg-[#DBB984] p-9">
-          {isAdmin && (
-            <ul>
-              <li>
-                <Link to="/dashboard/manageclass">Manage Classes</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/manageusers">Manage Users</Link>
-              </li>
-            </ul>
-          )}
-          {isInstructor && (
-            <ul>
-              <li>
-                <Link to="addclass">Add a Class</Link>
-              </li>
-              <li>
-                <Link to="myclass">My Classes</Link>
-              </li>
-            </ul>
-          )}
-          {isStaudent && (
-            <ul>
-              <li>
-                <Link to="/dashboard/selectedclass">My Selected Classes</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/enrolledclass">My Enrolled Classes</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/paymenthistory">My Payment History</Link>
-              </li>
-            </ul>
-          )}
-        </div>
-        <div className="dashboardRight col-span-10">
+    <div className="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content">
+        <div className="dashboardRight p-3 md:p-16 w-full h-full">
+          <label
+            htmlFor="my-drawer-2"
+            className="btn btn-primary drawer-button lg:hidden my-6"
+          >
+            <FaBars className="text-3xl"></FaBars>
+          </label>
           <Outlet></Outlet>
         </div>
       </div>
-    </section>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+        <ul className="menu m-0 p-0 w-80 h-full bg-base-200 text-base-content">
+          <div className="dashboardLeft col-span-2 min-h-screen bg-[#302787] p-9 px-4 text-white">
+            <div className="logo py-12">
+              <NavLink to="/">
+                <img className="inline-block w-[180px]" src={logo} alt="" />
+              </NavLink>
+            </div>
+            {isAdmin && (
+              <ul className="dashboardlink">
+                <li>
+                  <NavLink to="/dashboard/manageclass">
+                    {" "}
+                    <FaTools></FaTools> Manage Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageusers">
+                    {" "}
+                    <FaUserAlt></FaUserAlt> Manage Users
+                  </NavLink>
+                </li>
+              </ul>
+            )}
+            {isInstructor && (
+              <ul className="dashboardlink">
+                <li>
+                  <NavLink to="addclass">
+                    {" "}
+                    <FaBookMedical></FaBookMedical>Add a Class
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="myclass">
+                    {" "}
+                    <FaBookOpen></FaBookOpen> My Classes
+                  </NavLink>
+                </li>
+              </ul>
+            )}
+            {isStaudent && (
+              <ul className="dashboardlink">
+                <li>
+                  <NavLink
+                    to="/dashboard/selectedclass"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    <FaListUl></FaListUl> My Selected Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/enrolledclass">
+                    <FaBookMedical></FaBookMedical> My Enrolled Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/paymenthistory">
+                    <FaFileInvoiceDollar></FaFileInvoiceDollar> My Payment
+                    History
+                  </NavLink>
+                </li>
+              </ul>
+            )}
+          </div>
+        </ul>
+      </div>
+    </div>
   );
 };
 

@@ -5,8 +5,10 @@ import { Toaster, toast } from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useNavigate, useLocation } from "react-router-dom";
 import Heading from "../../Components/Heading/Heading";
+import useTitle from "../../hooks/useTitle";
 
 const ClassPage = () => {
+  useTitle("sF | Class");
   const navigate = useNavigate();
   const location = useLocation();
   const { currentuser } = useContext(AuthContext);

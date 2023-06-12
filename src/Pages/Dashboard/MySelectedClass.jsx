@@ -4,8 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const MySelectedClass = () => {
+  useTitle("sF | My Selected Class");
   const { currentuser } = useContext(AuthContext);
   const [axiosSecure] = useAxiosSecure();
   const { data: myAddedClass = [], refetch } = useQuery(
@@ -38,8 +40,8 @@ const MySelectedClass = () => {
     });
   };
   return (
-    <section id="myClass">
-      <table className="table table-zebra">
+    <div id="myClass" className="overflow-x-auto">
+      <table className="table table-zebra ">
         <thead>
           <tr>
             <th>Sl.No</th>
@@ -70,12 +72,15 @@ const MySelectedClass = () => {
                 <td>
                   <ul className="flex items-center gap-3">
                     <li>
-                      <button onClick={() => deleteClass(item._id)}>
+                      <button
+                        className="bg-[#FF3B4A] text-white px-3 py-2"
+                        onClick={() => deleteClass(item._id)}
+                      >
                         Delete
                       </button>
                     </li>
                     <li>
-                      <button>
+                      <button className="bg-[#50DBB4] text-white px-3 py-2">
                         <Link
                           state={item.itemsId}
                           to={`/dashboard/payment/${item._id}`}
@@ -91,7 +96,7 @@ const MySelectedClass = () => {
           })}
         </tbody>
       </table>
-    </section>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const StudentRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading || isStudentLoading) {
-    return <>Loading</>;
+    return <progress className="progress w-56"></progress>;
   }
 
   if (currentuser && isStudent) {

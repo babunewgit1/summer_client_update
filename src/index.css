@@ -116,3 +116,35 @@ span.deny {
 .modal-video {
   background-color: rgba(0, 0, 0, 0.8) !important;
 }
+
+.active,
+.dashboardlink li a:hover {
+  color: #ff3b4a !important;
+}
+
+.dashboardlink li a,
+.dashboardlink li a:hover {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  padding: 10px 15px !important;
+  background-color: #20252d !important;
+  margin-bottom: 6px !important;
+}
+
+table th {
+  font-size: 16px;
+}
+
+.dashboardRight {
+  background-color: #cad5e2;
+}
+
+table {
+  background-color: #fff;
+  padding: 25px 0px;
+}
+
+#manageUser table tr td button:disabled {
+  opacity: 0.5;
+}

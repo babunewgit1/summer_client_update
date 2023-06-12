@@ -3,8 +3,10 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Toaster, toast } from "react-hot-toast";
 import { useState } from "react";
+import useTitle from "../../hooks/useTitle";
 
 const ManageClass = () => {
+  useTitle("sF | Manage Class");
   const [postId, setPostId] = useState(null);
   const [axiosSecure] = useAxiosSecure();
   const { data: allClass = [], refetch } = useQuery(["class"], async () => {
@@ -56,17 +58,21 @@ const ManageClass = () => {
   return (
     <section id="allClass">
       <div className="wrapper max-w-6xl mx-auto">
-        <div className="allClassWrapper bg-slate-300 p-14 grid grid-cols-3 gap-x-8 gap-y-9">
+        <div className="allClassWrapper grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-9">
           {allClass.map((items) => {
             return (
-              <div className="classbox" key={items._id}>
+              <div
+                className="classbox boxShadow rounded-lg overflow-hidden bg-white"
+                key={items._id}
+              >
                 <img
                   className="w-full mb-2 h-[300px] object-cover"
                   src={items.image}
                   alt=""
                 />
-                <h3 className="text-3xl font-medium mb-4">{items.name}</h3>
-                <div className="info space-y-3">
+
+                <div className="info space-y-3 p-2 md:p-6">
+                  <h3 className="text-3xl font-medium mb-4">{items.name}</h3>
                   <p className="flex items-center justify-between">
                     <span>Instructor Name :</span>
                     {items.instructor_name}
@@ -87,35 +93,35 @@ const ManageClass = () => {
                     <span>Status :</span>
                     {items.status}
                   </p>
-                </div>
-                <div className="button mt-4">
-                  <ul className="flex items-center justify-between">
-                    <li>
-                      <button
-                        onClick={() => handelApprove(items._id)}
-                        className="inline-block text-white bg-green-400 px-3 py-2"
-                      >
-                        Approve
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => handelDeny(items._id)}
-                        className="inline-block text-white bg-orange-600 px-3 py-2"
-                      >
-                        Deny
-                      </button>
-                    </li>
-                    <li>
-                      <label
-                        onClick={() => handleFeeback(items._id)}
-                        htmlFor="my_modal_6"
-                        className="inline-block text-white bg-yellow-500 px-3 py-2"
-                      >
-                        Sent Feedback
-                      </label>
-                    </li>
-                  </ul>
+                  <div className="button mt-4">
+                    <ul className="flex items-center justify-between">
+                      <li>
+                        <button
+                          onClick={() => handelApprove(items._id)}
+                          className="inline-block text-white bg-green-400 px-3 py-2"
+                        >
+                          Approve
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          onClick={() => handelDeny(items._id)}
+                          className="inline-block text-white bg-orange-600 px-3 py-2"
+                        >
+                          Deny
+                        </button>
+                      </li>
+                      <li>
+                        <label
+                          onClick={() => handleFeeback(items._id)}
+                          htmlFor="my_modal_6"
+                          className="inline-block text-white bg-yellow-500 px-3 py-2"
+                        >
+                          Sent Feedback
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             );

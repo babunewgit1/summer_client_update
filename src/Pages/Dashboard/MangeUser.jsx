@@ -2,8 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Toaster, toast } from "react-hot-toast";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useTitle from "../../hooks/useTitle";
 
 const MangeUser = () => {
+  useTitle("sF | Manage user");
   const [axiosSecure] = useAxiosSecure();
   const { data: users = [], refetch } = useQuery(["users"], async () => {
     const res = await axiosSecure.get("/users");
@@ -47,7 +49,7 @@ const MangeUser = () => {
   };
 
   return (
-    <section id="manageUser" className="bg-white p-20">
+    <div id="manageUser" className="bg-white p-4 md:p-20 overflow-x-auto">
       <table className="w-full text-center">
         <thead>
           <tr>
@@ -67,10 +69,16 @@ const MangeUser = () => {
                 <td>{user?.email}</td>
                 <td>{user?.role}</td>
                 <td>
-                  <button onClick={() => handelMakeAdmin(user._id)}>
+                  <button
+                    disabled={user?.role === "admin"}
+                    onClick={() => handelMakeAdmin(user._id)}
+                  >
                     Make Admin
                   </button>
-                  <button onClick={() => handelIns(user._id)}>
+                  <button
+                    disabled={user?.role === "instructor"}
+                    onClick={() => handelIns(user._id)}
+                  >
                     Make Instructor
                   </button>
                 </td>
@@ -80,7 +88,7 @@ const MangeUser = () => {
         </tbody>
       </table>
       <Toaster></Toaster>
-    </section>
+    </div>
   );
 };
 

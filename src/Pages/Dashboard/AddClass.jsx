@@ -4,10 +4,13 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { Toaster, toast } from "react-hot-toast";
+import Heading from "../../Components/Heading/Heading";
+import useTitle from "../../hooks/useTitle";
 
 const imagesHostingKey = import.meta.env.VITE_IMG;
 
 const AddClass = () => {
+  useTitle("sF | Add Class");
   const [axiosSecure] = useAxiosSecure();
   const { currentuser } = useContext(AuthContext);
   const hostingUrl = `https://api.imgbb.com/1/upload?key=${imagesHostingKey}`;
@@ -53,9 +56,9 @@ const AddClass = () => {
 
   return (
     <section id="addClass">
-      <div className="addclassbox max-w-2xl mx-auto">
-        <div className="heading">
-          <h2 className="text-4xl font-semibold">Add A Class</h2>
+      <div className="addclassbox max-w-[800px] mx-auto p-4 md:p-10 bg-white">
+        <div className="heading ">
+          <Heading heading="Add a Class"></Heading>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="wrapper">
@@ -127,7 +130,9 @@ const AddClass = () => {
                 />
               </div>
               <div className="submitButton">
-                <button type="submit">Submit</button>
+                <button className="text-white bg-black px-3 py-2" type="submit">
+                  Submit
+                </button>
               </div>
             </div>
           </div>

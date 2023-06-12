@@ -5,8 +5,10 @@ import Googlelogin from "../SharedPages/Googlelogin/Googlelogin";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
+  useTitle("sF | Login");
   const [showpass, setShowpass] = useState(true);
   const { customLogin } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -39,10 +41,10 @@ const Login = () => {
       });
   };
   return (
-    <section id="login">
+    <section id="login" className="dark:bg-[#20252d]">
       <div className="mycontainer">
         <div className="loginWrapper h-screen w-full flex items-center justify-center">
-          <div className="loginBox w-[600px] bg-white shadowCustom">
+          <div className="loginBox w-[600px] dark:bg-[#20252d] dark:text-white bg-white shadowCustom">
             <div className="logiHeading">
               <h2 className="text-4xl font-semibold text-center mb-5">Login</h2>
             </div>

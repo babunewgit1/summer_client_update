@@ -2,8 +2,10 @@ import React from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Heading from "../../Components/Heading/Heading";
+import useTitle from "../../hooks/useTitle";
 
 const InstructorsPage = () => {
+  useTitle("sF | Class");
   const [axiosSecure] = useAxiosSecure();
   const { data: instractor = [] } = useQuery(["insforall"], async () => {
     const res = await axiosSecure.get("/insforall");

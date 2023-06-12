@@ -6,9 +6,12 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useLocation, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import Heading from "../../Components/Heading/Heading";
+import useTitle from "../../hooks/useTitle";
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT);
 
 const Payment = () => {
+  useTitle("sF | Payment");
   const { id } = useParams();
 
   const location = useLocation();
@@ -31,18 +34,22 @@ const Payment = () => {
 
   return (
     <>
-      payment for {payPrice}
-      <Elements stripe={stripePromise}>
-        <CheckoutForm
-          itemsId={classesItemsId}
-          amount={payPrice}
-          stripe={stripePromise}
-          image={image}
-          name={name}
-          itemId={itemId}
-          instructor_name={instructor_name}
-        ></CheckoutForm>
-      </Elements>
+      <div className="wrapper bg-white p-10 rounded-lg">
+        <Heading heading="Please confirm your payment"></Heading>
+        <div className="middle max-w-lg">
+          <Elements stripe={stripePromise}>
+            <CheckoutForm
+              itemsId={classesItemsId}
+              amount={payPrice}
+              stripe={stripePromise}
+              image={image}
+              name={name}
+              itemId={itemId}
+              instructor_name={instructor_name}
+            ></CheckoutForm>
+          </Elements>
+        </div>
+      </div>
     </>
   );
 };
