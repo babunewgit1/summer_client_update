@@ -5,13 +5,13 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 
 const PaymentHistory = () => {
-  useTitle("sF | Payment History");
-  const { currentuser } = useContext(AuthContext);
-  const [axiosSecure] = useAxiosSecure();
-  const { data: enrolledClass = [] } = useQuery(["payments"], async () => {
-    const res = await axiosSecure.get(`/payments/${currentuser?.email}`);
-    return res.data;
-  });
+  // useTitle("sF | Payment History");
+  // const { currentuser } = useContext(AuthContext);
+  // const [axiosSecure] = useAxiosSecure();
+  // const { data: enrolledClass = [] } = useQuery(["payments"], async () => {
+  //   const res = await axiosSecure.get(`/payments/${currentuser?.email}`);
+  //   return res.data;
+  // });
 
   return (
     <div id="enrolled" className="overflow-x-auto">
