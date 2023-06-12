@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
 import Heading from "../../../Components/Heading/Heading";
-import { Zoom } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const PopularInst = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -21,7 +21,7 @@ const PopularInst = () => {
           <div className="heading">
             <Heading heading="Our Popular Instructors"></Heading>
           </div>
-          <Zoom>
+          <Fade>
             <div className="popularInstWrapper grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insforallhome.map((items) => {
                 return (
@@ -44,7 +44,7 @@ const PopularInst = () => {
                 );
               })}
             </div>
-          </Zoom>
+          </Fade>
           <div className="all text-center mt-7">
             <Link
               className="inline-block font-medium bg-[#20252d] dark:bg-[#302787] text-white px-6 py-4"

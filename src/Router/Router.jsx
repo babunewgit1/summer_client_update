@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Mainlayout></Mainlayout>,
-    // errorElement: <NotFround></NotFround>,
+    errorElement: <NotFround></NotFround>,
     children: [
       {
         path: "/",

@@ -26,7 +26,7 @@ const MyClass = () => {
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    axiosSecure.patch(`/class/${mupdate._id}`, data).then((res) => {
+    axiosSecure.patch(`/classupdate/${mupdate._id}`, data).then((res) => {
       if (res.data.modifiedCount > 0) {
         refetch();
         reset();

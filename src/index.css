@@ -145,6 +145,6 @@ table {
   padding: 25px 0px;
 }
 
-#manageUser table tr td button:disabled {
+button:disabled {
   opacity: 0.5;
 }

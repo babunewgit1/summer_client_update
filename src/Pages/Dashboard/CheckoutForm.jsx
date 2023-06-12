@@ -2,7 +2,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import Swal from "sweetalert2";
+
 import { Toaster, toast } from "react-hot-toast";
 
 const CheckoutForm = ({
@@ -64,10 +64,7 @@ const CheckoutForm = ({
       });
 
     if (confirmError) {
-      Swal.fire({
-        icon: "error",
-        title: "Something is worng",
-      });
+      toast.error("Someting Wrong");
     }
     setProcessing(false);
     if (paymentIntent?.status === "succeeded") {
@@ -90,10 +87,7 @@ const CheckoutForm = ({
           res.data.result.insertedId &&
           res.data.deleteResult.deletedCount > 0
         ) {
-          Swal.fire({
-            icon: "success",
-            title: "Payment successfull and Class removed form your card",
-          });
+          toast.success("Payment success");
 
           axiosSecure.patch(`/classforall/${itemId}`).then((res) => {
             console.log(res.data);

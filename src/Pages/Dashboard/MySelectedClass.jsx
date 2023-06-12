@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const MySelectedClass = () => {
   useTitle("sF | My Selected Class");
@@ -19,23 +19,11 @@ const MySelectedClass = () => {
   );
 
   const deleteClass = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axiosSecure.delete(`/selectedclass/${id}`).then((data) => {
-          console.log(data.data);
-          if (data.data.deletedCount > 0) {
-            refetch();
-            Swal.fire("Deleted!", "Your Class  has been deleted.", "success");
-          }
-        });
+    axiosSecure.delete(`/selectedclass/${id}`).then((data) => {
+      console.log(data.data);
+      if (data.data.deletedCount > 0) {
+        refetch();
+        toast.success("Class Removed");
       }
     });
   };
@@ -96,6 +84,7 @@ const MySelectedClass = () => {
           })}
         </tbody>
       </table>
+      <Toaster></Toaster>
     </div>
   );
 };

@@ -95,7 +95,7 @@ const Register = () => {
                     <label className="block font-medium mb-2">Name</label>
                     <input
                       {...register("name")}
-                      className="block w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
+                      className="block dark:text-black w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
                       type="text"
                       placeholder="Enter Your Name"
                     />
@@ -104,7 +104,7 @@ const Register = () => {
                     <label className="block font-medium mb-2">Email</label>
                     <input
                       {...register("email")}
-                      className="block w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
+                      className="block dark:text-black w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
                       type="email"
                       placeholder="Enter Your Email"
                     />
@@ -113,14 +113,14 @@ const Register = () => {
                     <label className="block font-medium mb-2">Password</label>
                     <input
                       {...register("password")}
-                      className="block w-full border border-black bg-white rounded-sm px-5 pr-16 py-3 outline-0"
+                      className="block dark:text-black w-full border border-black bg-white rounded-sm px-5 pr-16 py-3 outline-0"
                       type={showpass ? "password" : "text"}
                       placeholder="Enter Your Password"
                       autoComplete="off"
                     />
                     <span
                       onClick={() => setShowpass(!showpass)}
-                      className="absolute top-[49px] right-3 cursor-pointer"
+                      className="absolute dark:text-black top-[49px] right-3 cursor-pointer"
                     >
                       {showpass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
                     </span>
@@ -131,14 +131,14 @@ const Register = () => {
                     </label>
                     <input
                       {...register("cmpassword")}
-                      className="block w-full border border-black bg-white rounded-sm px-5 pr-16 py-3 outline-0"
+                      className="block dark:text-black w-full border border-black bg-white rounded-sm px-5 pr-16 py-3 outline-0"
                       type={showpasscon ? "password" : "text"}
                       placeholder="Confirm Your Password"
                       autoComplete="off"
                     />
                     <span
                       onClick={() => setShowpasscon(!showpasscon)}
-                      className="absolute top-[49px] right-3 cursor-pointer"
+                      className="absolute dark:text-black top-[49px] right-3 cursor-pointer"
                     >
                       {showpasscon ? (
                         <FaEye></FaEye>
@@ -151,7 +151,7 @@ const Register = () => {
                     <label className="block font-medium mb-2">Photo Url</label>
                     <input
                       {...register("photo")}
-                      className="block w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
+                      className="block dark:text-black w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
                       type="text"
                       placeholder="Enter Your Photo Url"
                     />

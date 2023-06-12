@@ -70,10 +70,13 @@ const ClassPage = () => {
         </div>
         <div className="classWrapper grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {approvedClass.map((items) => {
+            console.log(items);
             return (
               <div
                 key={items._id}
-                className="classBox boxShadow rounded-lg overflow-hidden"
+                className={`classBox boxShadow rounded-lg overflow-hidden ${
+                  items?.available_seats < 1 ? "bg-red-600" : ""
+                }`}
               >
                 <div className="classImg">
                   <img
@@ -99,6 +102,7 @@ const ClassPage = () => {
                   </p>
                   <div className="all mt-3">
                     <button
+                      disabled={items?.available_seats < 1}
                       onClick={() => handleSelectClass(items._id)}
                       className="inline-block font-medium bg-[#20252d] dark:bg-[#302787] text-white px-6 py-4"
                     >

@@ -56,7 +56,7 @@ const Login = () => {
                     <input
                       required
                       {...register("email")}
-                      className="block w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
+                      className="dark:text-black block w-full border border-black bg-white rounded-sm px-5 py-3 outline-0"
                       type="email"
                       placeholder="Enter Your Email"
                     />
@@ -66,14 +66,14 @@ const Login = () => {
                     <input
                       required
                       {...register("password")}
-                      className="block w-full border border-black bg-white rounded-sm px-5 pr-16 py-3 outline-0"
+                      className="dark:text-black block w-full border border-black bg-white rounded-sm px-5 pr-16 py-3 outline-0"
                       type={showpass ? "password" : "text"}
                       placeholder="Enter Your Email"
                       autoComplete="off"
                     />
                     <span
                       onClick={() => setShowpass(!showpass)}
-                      className="absolute top-[49px] right-3 cursor-pointer"
+                      className="absolute dark:text-black top-[49px] right-3 cursor-pointer"
                     >
                       {showpass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
                     </span>
