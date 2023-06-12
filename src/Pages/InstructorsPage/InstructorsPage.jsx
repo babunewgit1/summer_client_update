@@ -1,6 +1,7 @@
 import React from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import Heading from "../../Components/Heading/Heading";
 
 const InstructorsPage = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -12,10 +13,10 @@ const InstructorsPage = () => {
   console.log(instractor);
 
   return (
-    <section id="instructors">
+    <section id="instructors" className="md:py-24 py-8">
       <div className="mycontainer">
         <div className="courseheading">
-          <h3 className="text-4xl font-bold text-center my-7">All classes</h3>
+          <Heading heading="Our Popular Instructors"></Heading>
         </div>
         <div className="classWrapper grid grid-cols-3 gap-8">
           {instractor.map((items) => {

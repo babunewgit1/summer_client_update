@@ -93,3 +93,26 @@ span.deny {
 .bg-blacks {
   background-color: #20252d;
 }
+
+.boxShadow {
+  box-shadow: 0 12px 40px rgba(183, 188, 206, 0.35);
+}
+
+.classDetails p span {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#about {
+  background-image: url(./assets/bg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  color: #fff;
+}
+
+.modal-video {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}

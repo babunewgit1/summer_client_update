@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <section
       id="navbar"
-      className=" dark:bg-blacks bg-greens py-4 lg:px-10 px-4"
+      className=" dark:bg-[#20252d] bg-[#302787] py-4 lg:px-10 px-4"
     >
       <div className="fulid">
         <div className="navbarWrapper lg:flex items-center justify-between">

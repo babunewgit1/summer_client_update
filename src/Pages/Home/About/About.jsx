@@ -6,9 +6,9 @@ import play from "../../../assets/play.png";
 const About = () => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <section id="about">
+    <section id="about" className="md:py-24 py-8">
       <div className="mycontainer">
-        <div className="wrapper grid grid-cols-2 gap-7 items-center">
+        <div className="wrapper grid md:grid-cols-2 gap-7 items-center">
           <div className="wrapperLeft">
             <React.Fragment>
               <ModalVideo
@@ -35,7 +35,7 @@ const About = () => {
             </React.Fragment>
           </div>
           <div className="wrapperRight">
-            <h2>About Us</h2>
+            <h2 className="text-4xl font-medium mb-4">About Us</h2>
             <p>
               Welcome to SportFusion, where we combine the excitement of games
               with the joy of learning. Our summer programs are designed to

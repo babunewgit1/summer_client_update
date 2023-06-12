@@ -23,33 +23,63 @@ const Bannar = () => {
     <div>
       <Slider {...settings}>
         <div className="sliderImg relative">
-          <img className="w-full h-[700px] object-cover" src={slide1} alt="" />
+          <img
+            className="w-full h-[350px] md:h-[700px] object-cover"
+            src={slide1}
+            alt=""
+          />
           <div className="slideContent flex items-center justify-center z-30 absolute w-full h-full bg-black bg-opacity-50 left-0 top-0">
-            <h2 className="text-6xl text-white font-semibold">Ice Hockey</h2>
+            <h2 className="text-3xl md:text-6xl text-white font-semibold">
+              Ice Hockey
+            </h2>
           </div>
         </div>
         <div className="sliderImg relative">
-          <img className="w-full h-[700px] object-cover" src={slide2} alt="" />
+          <img
+            className="w-full h-[350px] md:h-[700px] object-cover"
+            src={slide2}
+            alt=""
+          />
           <div className="slideContent flex items-center justify-center z-30 absolute w-full h-full bg-black bg-opacity-50 left-0 top-0">
-            <h2 className="text-6xl text-white font-semibold">Tennis </h2>
+            <h2 className="text-3xl md:text-6xl text-white font-semibold">
+              Tennis{" "}
+            </h2>
           </div>
         </div>
         <div className="sliderImg relative">
-          <img className="w-full h-[700px] object-cover" src={slide3} alt="" />
+          <img
+            className="w-full h-[350px] md:h-[700px] object-cover"
+            src={slide3}
+            alt=""
+          />
           <div className="slideContent flex items-center justify-center z-30 absolute w-full h-full bg-black bg-opacity-50 left-0 top-0">
-            <h2 className="text-6xl text-white font-semibold">Golf </h2>
+            <h2 className="text-3xl md:text-6xl text-white font-semibold">
+              Golf{" "}
+            </h2>
           </div>
         </div>
         <div className="sliderImg relative">
-          <img className="w-full h-[700px] object-cover" src={slide4} alt="" />
+          <img
+            className="w-full h-[350px] md:h-[700px] object-cover"
+            src={slide4}
+            alt=""
+          />
           <div className="slideContent flex items-center justify-center z-30 absolute w-full h-full bg-black bg-opacity-50 left-0 top-0">
-            <h2 className="text-6xl text-white font-semibold">Basketball </h2>
+            <h2 className="text-3xl md:text-6xl text-white font-semibold">
+              Basketball{" "}
+            </h2>
           </div>
         </div>
         <div className="sliderImg relative">
-          <img className="w-full h-[700px] object-cover" src={slide5} alt="" />
+          <img
+            className="w-full h-[350px] md:h-[700px] object-cover"
+            src={slide5}
+            alt=""
+          />
           <div className="slideContent flex items-center justify-center z-30 absolute w-full h-full bg-black bg-opacity-50 left-0 top-0">
-            <h2 className="text-6xl text-white font-semibold">Baseball </h2>
+            <h2 className="text-3xl md:text-6xl text-white font-semibold">
+              Baseball{" "}
+            </h2>
           </div>
         </div>
       </Slider>

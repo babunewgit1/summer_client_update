@@ -12,7 +12,7 @@ import {
 
 const Footer = () => {
   return (
-    <section id="footer" className="bg-[#1e272e]">
+    <section id="footer" className="bg-[#302787] dark:bg-[#20252d]">
       <div className="mycontainer">
         <div className="footer-wrapper block lg:flex justify-between pt-12 pb-5 lg:space-y-0 space-y-10">
           <div className="footerLogo">
