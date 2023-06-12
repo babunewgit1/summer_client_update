@@ -33,4 +33,4 @@ React.js | Tailwindcss | Node.js | Express.js | MongoDB | Firebase | VercelReact
 
 ### Live site link
 
-https://chat.openai.com/
+https://sportfusion-f5a8c.web.app/

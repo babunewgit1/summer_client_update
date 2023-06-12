@@ -28,7 +28,7 @@ const Googlelogin = () => {
             role: "student",
           };
 
-          fetch("http://localhost:5000/users", {
+          fetch("https://server-six-phi.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
       setCurrentuser(user);
       if (user) {
         axios
-          .post("http://localhost:5000/jwt", {
+          .post("https://server-six-phi.vercel.app/jwt", {
             email: user.email,
           })
           .then((data) => {

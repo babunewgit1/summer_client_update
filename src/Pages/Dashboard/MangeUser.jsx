@@ -13,7 +13,7 @@ const MangeUser = () => {
   });
 
   const handelMakeAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://server-six-phi.vercel.app/users/admin/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -31,7 +31,7 @@ const MangeUser = () => {
   };
 
   const handelIns = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://server-six-phi.vercel.app/users/admin/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
