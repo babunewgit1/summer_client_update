@@ -12,23 +12,23 @@ const MangeUser = () => {
     return res.data;
   });
 
-  const handelMakeAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ role: "admin" }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.modifiedCount) {
-          refetch();
-          toast.success("Making Admin successfull");
-        }
-      });
-  };
+  // const handelMakeAdmin = (id) => {
+  //   fetch(`http://localhost:5000/users/admin/${id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify({ role: "admin" }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.modifiedCount) {
+  //         refetch();
+  //         toast.success("Making Admin successfull");
+  //       }
+  //     });
+  // };
 
   const handelIns = (id) => {
     fetch(`http://localhost:5000/users/admin/${id}`, {
