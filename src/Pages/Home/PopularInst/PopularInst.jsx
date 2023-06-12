@@ -14,7 +14,7 @@ const PopularInst = () => {
   console.log(insforallhome);
 
   return (
-    <section id="popularins" className="md:py-24 py-8 dark:bg-[#20252d] ">
+    <section id="popularins" className="md:py-24 py-8 dark:bg-[#20252d]">
       <div className="mycontainer">
         <div className="wrapper">
           <div className="heading">
@@ -47,7 +47,6 @@ const PopularInst = () => {
               className="inline-block font-medium bg-[#20252d] dark:bg-[#302787] text-white px-6 py-4"
               to="/instructors"
             >
-              {" "}
               See All Instructors
             </Link>
           </div>

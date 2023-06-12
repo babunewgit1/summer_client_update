@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Toaster, toast } from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useNavigate, useLocation } from "react-router-dom";
+import Heading from "../../Components/Heading/Heading";
 
 const ClassPage = () => {
   const navigate = useNavigate();
@@ -60,15 +61,18 @@ const ClassPage = () => {
   };
 
   return (
-    <section id="course">
+    <section id="course" className="md:py-24 py-8 dark:bg-[#20252d]">
       <div className="mycontainer">
         <div className="courseheading">
-          <h3 className="text-4xl font-bold text-center my-7">All classes</h3>
+          <Heading heading="Our Classes"></Heading>
         </div>
-        <div className="classWrapper grid grid-cols-3 gap-8">
+        <div className="classWrapper grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {approvedClass.map((items) => {
             return (
-              <div key={items._id} className="classBox">
+              <div
+                key={items._id}
+                className="classBox boxShadow rounded-lg overflow-hidden"
+              >
                 <div className="classImg">
                   <img
                     className="w-full h-[300px] mb-5"
@@ -76,8 +80,9 @@ const ClassPage = () => {
                     alt=""
                   />
                 </div>
-                <h3 className="text-3xl font-medium">{items.name}</h3>
-                <div className="classDetails">
+
+                <div className="classDetails p-2 md:p-6 dark:text-white">
+                  <h3 className="text-3xl font-medium">{items.name}</h3>
                   <p className="flex items-center justify-between space-y-3">
                     Instructor name <span>{items.instructor_name}</span>
                   </p>
@@ -90,12 +95,14 @@ const ClassPage = () => {
                   <p className="flex items-center justify-between space-y-3">
                     Price <span>{items.price}</span>
                   </p>
-                  <button
-                    onClick={() => handleSelectClass(items._id)}
-                    className="btn btn-success"
-                  >
-                    Select class
-                  </button>
+                  <div className="all mt-3">
+                    <button
+                      onClick={() => handleSelectClass(items._id)}
+                      className="inline-block font-medium bg-[#20252d] dark:bg-[#302787] text-white px-6 py-4"
+                    >
+                      Select class
+                    </button>
+                  </div>
                 </div>
               </div>
             );
