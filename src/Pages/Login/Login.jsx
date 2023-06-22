@@ -85,6 +85,10 @@ const Login = () => {
                     >
                       Log In
                     </button>
+                    <p className="text-[#DBB984]">
+                      Please use email: admin@gmail.com and password: Admin@1234
+                      for testing
+                    </p>
                   </div>
                 </div>
               </form>
