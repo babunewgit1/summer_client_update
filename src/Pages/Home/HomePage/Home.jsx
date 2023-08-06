@@ -3,6 +3,7 @@ import Bannar from "../Bannar/Bannar";
 import PopularClass from "../PopularClass/PopularClass";
 import PopularInst from "../PopularInst/PopularInst";
 import About from "../About/About";
+import Download from "../Download/Download";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <PopularClass></PopularClass>
       <About></About>
       <PopularInst></PopularInst>
+      <Download></Download>
     </>
   );
 };
